@@ -27,7 +27,7 @@
 
 #import "PlanetToolDocument.h"
 #import "FPMPNG.h"
-#import "OOMaths.h"
+#import <OoliteBase/OoliteBase.h>
 #import "NSImage+FloatPixMap.h"
 
 
@@ -142,7 +142,7 @@ static void LoadProgressHandler(float proportion, void *context);
 
 - (void) deferredAwakeFromNib
 {
-	if (!self.gridGenerator && _sourcePixMap == nil)
+	if (!self.gridGenerator && _sourcePixMap == NULL)
 	{
 		NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Loading \"%@\"...", NULL), [[NSFileManager defaultManager] displayNameAtPath:self.displayName]];
 		[self showProgressSheetWithMessage:message cancelAction:@selector(cancelLoading:)];
@@ -740,7 +740,7 @@ static void WriteErrorHandler(const char *message, bool isError, void *context)
 - (void) asyncLoadImage:(NSString *)path
 {
 	_sourcePixMap = FPMCreateWithPNG([path fileSystemRepresentation], kFPMGammaLinear, LoadErrorHandler, LoadProgressHandler, self);
-	if (_sourcePixMap != nil)
+	if (_sourcePixMap != NULL)
 	{
 		[self performSelectorOnMainThread:@selector(loadingComplete) withObject:nil waitUntilDone:NO];
 	}

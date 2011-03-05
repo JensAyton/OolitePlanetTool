@@ -29,7 +29,7 @@
 
 #include "FloatPixMap.h"
 #include <math.h>
-#include "OOMaths.h"
+#include <OoliteBase/OoliteBase.h>
 
 FPM_BEGIN_EXTERN_C
 

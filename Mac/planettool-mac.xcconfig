@@ -1,0 +1,2 @@
+#include "../../../Config/oolite-shared-settings.xcconfig"
+#include "planettool-version.inc"
