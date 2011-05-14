@@ -28,8 +28,7 @@
 #define INCLUDED_SphericalPixelSource_h
 
 #include "FloatPixMap.h"
-#include <math.h>
-#include <OoliteBase/OoliteBase.h>
+#include <OoliteBase/OOMaths.h>
 
 FPM_BEGIN_EXTERN_C
 

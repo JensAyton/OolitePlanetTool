@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A058D8C137E973C002015C2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A058D8B137E973C002015C2 /* AppKit.framework */; };
+		1A058D90137E9740002015C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A058D8F137E9740002015C2 /* Foundation.framework */; };
 		1A11598A1073AADD00A75165 /* FloatPixMap.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1159891073AADD00A75165 /* FloatPixMap.c */; settings = {COMPILER_FLAGS = "-falign-loops=32 -falign-loops-max-skip=31 -fstrict-aliasing"; }; };
 		1A1159D91073FAB200A75165 /* FPMPNG.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1159D81073FAB200A75165 /* FPMPNG.c */; };
 		1A115A5910740C6200A75165 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A115A5810740C6200A75165 /* libz.dylib */; };
@@ -25,7 +27,6 @@
 		1A8DA59410777E6700114A36 /* RenderToLatLong.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A8DA59310777E6600114A36 /* RenderToLatLong.c */; };
 		1A98F9541078ABA300E0F928 /* MatrixTransformer.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A98F9531078ABA300E0F928 /* MatrixTransformer.c */; };
 		1A98FB8E10793F1400E0F928 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.c */; };
-		1AA1A8C5118AFF4300D3B653 /* planettool-mac.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */; };
 		1AA82EBB1190C9AD00C4C7B3 /* CosineBlurFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 1AA82EB81190C9AD00C4C7B3 /* CosineBlurFilter.c */; };
 		1AA82EC71190CADA00C4C7B3 /* CosineBlurFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 1AA82EB81190C9AD00C4C7B3 /* CosineBlurFilter.c */; };
 		1AB905A713224106005B4A67 /* OoliteBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB905A2132240EE005B4A67 /* OoliteBase.framework */; };
@@ -63,42 +64,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB9059A132240EE005B4A67 /* OoliteBase.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OoliteBase.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = OoliteBase;
 		};
 		1AB905B013224128005B4A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB905A913224128005B4A67 /* libpng.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A71E6F30BCE340C00CD5C13 /* libpng-for-oolite-graphics.a */;
+			remoteGlobalIDString = 1A71E6F30BCE340C00CD5C13;
 			remoteInfo = libpng;
 		};
 		1AB905B413224146005B4A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB905A913224128005B4A67 /* libpng.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1A71E6F20BCE340C00CD5C13 /* libpng */;
+			remoteGlobalIDString = 1A71E6F20BCE340C00CD5C13;
 			remoteInfo = libpng;
 		};
 		1AB905B61322414A005B4A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB9059A132240EE005B4A67 /* OoliteBase.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* OoliteBase */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OoliteBase;
 		};
 		1AB905B813224153005B4A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB905A913224128005B4A67 /* libpng.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1A71E6F20BCE340C00CD5C13 /* libpng */;
+			remoteGlobalIDString = 1A71E6F20BCE340C00CD5C13;
 			remoteInfo = libpng;
 		};
 		1AB905BA13224153005B4A67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AB9059A132240EE005B4A67 /* OoliteBase.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* OoliteBase */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = OoliteBase;
 		};
 /* End PBXContainerItemProxy section */
@@ -117,6 +118,15 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		1A058D55137E9562002015C2 /* oolite-copy-headers.make */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "oolite-copy-headers.make"; sourceTree = "<group>"; };
+		1A058D56137E9562002015C2 /* oolite-debug-configuration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oolite-debug-configuration.xcconfig"; sourceTree = "<group>"; };
+		1A058D57137E9562002015C2 /* oolite-developer-configuration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oolite-developer-configuration.xcconfig"; sourceTree = "<group>"; };
+		1A058D58137E9562002015C2 /* oolite-enduser-configuration.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oolite-enduser-configuration.xcconfig"; sourceTree = "<group>"; };
+		1A058D59137E9562002015C2 /* oolite-shared-settings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "oolite-shared-settings.xcconfig"; sourceTree = "<group>"; };
+		1A058D5A137E9562002015C2 /* oolite-shared.make */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "oolite-shared.make"; sourceTree = "<group>"; };
+		1A058D5B137E9562002015C2 /* oolite-version.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = "oolite-version.inc"; sourceTree = "<group>"; };
+		1A058D8B137E973C002015C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1A058D8F137E9740002015C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A1159881073AADD00A75165 /* FloatPixMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatPixMap.h; sourceTree = "<group>"; };
 		1A1159891073AADD00A75165 /* FloatPixMap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FloatPixMap.c; sourceTree = "<group>"; };
 		1A1159D71073FAB200A75165 /* FPMPNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMPNG.h; sourceTree = "<group>"; };
@@ -125,23 +135,6 @@
 		1A115AD61074866300A75165 /* FPMGamma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMGamma.h; sourceTree = "<group>"; };
 		1A115AD71074866300A75165 /* FPMGamma.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FPMGamma.c; sourceTree = "<group>"; };
 		1A115AE3107526AB00A75165 /* FPMBasics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMBasics.h; sourceTree = "<group>"; };
-		1A115B9D10754CC000A75165 /* png.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = png.c; path = "../../deps/Cross-platform-deps/libpng/png.c"; sourceTree = SOURCE_ROOT; };
-		1A115B9E10754CC000A75165 /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = png.h; path = "../../deps/Cross-platform-deps/libpng/png.h"; sourceTree = SOURCE_ROOT; };
-		1A115B9F10754CC000A75165 /* pngconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pngconf.h; path = "../../deps/Cross-platform-deps/libpng/pngconf.h"; sourceTree = SOURCE_ROOT; };
-		1A115BA010754CC000A75165 /* pngerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngerror.c; path = "../../deps/Cross-platform-deps/libpng/pngerror.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA210754CC000A75165 /* pngget.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngget.c; path = "../../deps/Cross-platform-deps/libpng/pngget.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA310754CC000A75165 /* pngmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngmem.c; path = "../../deps/Cross-platform-deps/libpng/pngmem.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA410754CC000A75165 /* pngpread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngpread.c; path = "../../deps/Cross-platform-deps/libpng/pngpread.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA510754CC000A75165 /* pngread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngread.c; path = "../../deps/Cross-platform-deps/libpng/pngread.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA610754CC000A75165 /* pngrio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngrio.c; path = "../../deps/Cross-platform-deps/libpng/pngrio.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA710754CC000A75165 /* pngrtran.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngrtran.c; path = "../../deps/Cross-platform-deps/libpng/pngrtran.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA810754CC000A75165 /* pngrutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngrutil.c; path = "../../deps/Cross-platform-deps/libpng/pngrutil.c"; sourceTree = SOURCE_ROOT; };
-		1A115BA910754CC000A75165 /* pngset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngset.c; path = "../../deps/Cross-platform-deps/libpng/pngset.c"; sourceTree = SOURCE_ROOT; };
-		1A115BAA10754CC000A75165 /* pngtrans.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngtrans.c; path = "../../deps/Cross-platform-deps/libpng/pngtrans.c"; sourceTree = SOURCE_ROOT; };
-		1A115BAC10754CC000A75165 /* pngwio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwio.c; path = "../../deps/Cross-platform-deps/libpng/pngwio.c"; sourceTree = SOURCE_ROOT; };
-		1A115BAD10754CC000A75165 /* pngwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwrite.c; path = "../../deps/Cross-platform-deps/libpng/pngwrite.c"; sourceTree = SOURCE_ROOT; };
-		1A115BAE10754CC000A75165 /* pngwtran.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwtran.c; path = "../../deps/Cross-platform-deps/libpng/pngwtran.c"; sourceTree = SOURCE_ROOT; };
-		1A115BAF10754CC000A75165 /* pngwutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwutil.c; path = "../../deps/Cross-platform-deps/libpng/pngwutil.c"; sourceTree = SOURCE_ROOT; };
 		1A115C001075519400A75165 /* FPMQuantize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMQuantize.h; sourceTree = "<group>"; };
 		1A115C011075519400A75165 /* FPMQuantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FPMQuantize.c; sourceTree = "<group>"; };
 		1A115D3A10760EE200A75165 /* FPMRaw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMRaw.h; sourceTree = "<group>"; };
@@ -157,7 +150,6 @@
 		1A126EF61180FA1F00D2A744 /* PThreadScheduler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PThreadScheduler.c; sourceTree = "<group>"; };
 		1A3D6DD510B020A9003F7810 /* ReadCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCube.h; sourceTree = "<group>"; };
 		1A3D6DD610B020A9003F7810 /* ReadCube.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ReadCube.c; sourceTree = "<group>"; };
-		1A3EEB811190A52A00082DFC /* planettool-version.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = "planettool-version.inc"; sourceTree = "<group>"; };
 		1A50B55811848A1000F8B41E /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1A50B88D1184CB5E00F8B41E /* NSImage+FloatPixMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+FloatPixMap.h"; sourceTree = "<group>"; };
 		1A50B88E1184CB5E00F8B41E /* NSImage+FloatPixMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+FloatPixMap.m"; sourceTree = "<group>"; };
@@ -176,8 +168,6 @@
 		1A98F9521078ABA300E0F928 /* MatrixTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixTransformer.h; sourceTree = "<group>"; };
 		1A98F9531078ABA300E0F928 /* MatrixTransformer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MatrixTransformer.c; sourceTree = "<group>"; };
 		1A98FB3310793A5500E0F928 /* interpolate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = interpolate.c; sourceTree = "<group>"; };
-		1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "planettool-mac.xcconfig"; sourceTree = "<group>"; };
-		1AA1F81913223F0B002EF0B2 /* oolite-shared-settings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "oolite-shared-settings.xcconfig"; path = "../../../Config/oolite-shared-settings.xcconfig"; sourceTree = SOURCE_ROOT; };
 		1AA82EB81190C9AD00C4C7B3 /* CosineBlurFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CosineBlurFilter.c; sourceTree = "<group>"; };
 		1AA82EB91190C9AD00C4C7B3 /* CosineBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CosineBlurFilter.h; sourceTree = "<group>"; };
 		1AB9059A132240EE005B4A67 /* OoliteBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OoliteBase.xcodeproj; path = ../../../Components/OoliteBase/Mac/OoliteBase.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -208,6 +198,8 @@
 				1AEEF09311846C4E0041CC67 /* libz.dylib in Frameworks */,
 				1AB905A81322410A005B4A67 /* OoliteBase.framework in Frameworks */,
 				1AB905B21322412A005B4A67 /* libpng-for-oolite-graphics.a in Frameworks */,
+				1A058D8C137E973C002015C2 /* AppKit.framework in Frameworks */,
+				1A058D90137E9740002015C2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +219,13 @@
 		08FB7794FE84155DC02AAC07 /* planettool */ = {
 			isa = PBXGroup;
 			children = (
+				1A058D54137E9562002015C2 /* Config */,
 				1A675E0210AF18D000786F5F /* Makefile */,
-				1AA1F81913223F0B002EF0B2 /* oolite-shared-settings.xcconfig */,
-				1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */,
-				1A3EEB811190A52A00082DFC /* planettool-version.inc */,
 				08FB7795FE84155DC02AAC07 /* Source */,
-				1A115B9C10754CB300A75165 /* libpng */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				1AB905A3132240F4005B4A67 /* Frameworks and libraries */,
+				1A058D8B137E973C002015C2 /* AppKit.framework */,
+				1A058D8F137E9740002015C2 /* Foundation.framework */,
 			);
 			name = planettool;
 			sourceTree = "<group>";
@@ -257,29 +248,20 @@
 			path = ../Source;
 			sourceTree = "<group>";
 		};
-		1A115B9C10754CB300A75165 /* libpng */ = {
+		1A058D54137E9562002015C2 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				1A115B9D10754CC000A75165 /* png.c */,
-				1A115B9E10754CC000A75165 /* png.h */,
-				1A115B9F10754CC000A75165 /* pngconf.h */,
-				1A115BA010754CC000A75165 /* pngerror.c */,
-				1A115BA210754CC000A75165 /* pngget.c */,
-				1A115BA310754CC000A75165 /* pngmem.c */,
-				1A115BA410754CC000A75165 /* pngpread.c */,
-				1A115BA510754CC000A75165 /* pngread.c */,
-				1A115BA610754CC000A75165 /* pngrio.c */,
-				1A115BA710754CC000A75165 /* pngrtran.c */,
-				1A115BA810754CC000A75165 /* pngrutil.c */,
-				1A115BA910754CC000A75165 /* pngset.c */,
-				1A115BAA10754CC000A75165 /* pngtrans.c */,
-				1A115BAC10754CC000A75165 /* pngwio.c */,
-				1A115BAD10754CC000A75165 /* pngwrite.c */,
-				1A115BAE10754CC000A75165 /* pngwtran.c */,
-				1A115BAF10754CC000A75165 /* pngwutil.c */,
+				1A058D55137E9562002015C2 /* oolite-copy-headers.make */,
+				1A058D56137E9562002015C2 /* oolite-debug-configuration.xcconfig */,
+				1A058D57137E9562002015C2 /* oolite-developer-configuration.xcconfig */,
+				1A058D58137E9562002015C2 /* oolite-enduser-configuration.xcconfig */,
+				1A058D59137E9562002015C2 /* oolite-shared-settings.xcconfig */,
+				1A058D5A137E9562002015C2 /* oolite-shared.make */,
+				1A058D5B137E9562002015C2 /* oolite-version.inc */,
 			);
-			name = libpng;
-			sourceTree = "<group>";
+			name = Config;
+			path = ../../../Config;
+			sourceTree = SOURCE_ROOT;
 		};
 		1A115C831075620A00A75165 /* FloatPixMap */ = {
 			isa = PBXGroup;
@@ -519,7 +501,6 @@
 				1AEEF0BC11846CAC0041CC67 /* MainMenu.xib in Resources */,
 				1AEEF0C41184705F0041CC67 /* PlanetToolDocument.xib in Resources */,
 				1A50B55911848A1000F8B41E /* Localizable.strings in Resources */,
-				1AA1A8C5118AFF4300D3B653 /* planettool-mac.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,180 +621,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1A2BEADF1182F083009E1BEB /* Debug-optimized */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */;
-			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				OOLITE_ROOT = ../../../;
-				PREBINDING = NO;
-			};
-			name = "Debug-optimized";
-		};
-		1A2BEAE01182F083009E1BEB /* Debug-optimized */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = NO;
-				DEBUG_INFORMATION_FORMAT = stabs;
-				DEPS_INCLUDE_PATH = "$(SYMROOT)/$(CONFIGURATION)/include";
-				GCC_AUTO_VECTORIZATION = YES;
-				GCC_CW_ASM_SYNTAX = YES;
-				GCC_ENABLE_ASM_KEYWORD = YES;
-				GCC_FAST_MATH = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
-					"OOMATHS_STANDALONE=1",
-					"PLANETTOOL_VERSION=\"\\\"$PLANETTOOL_VERSION\\\"\"",
-				);
-				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "\"$(DEPS_INCLUDE_PATH)/png\"";
-				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/";
-				LLVM_LTO = NO;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "-fverbose-asm";
-				PRODUCT_NAME = planettool;
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
-			};
-			name = "Debug-optimized";
-		};
 		1AEEF03711846ADB0041CC67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				DEPS_INCLUDE_PATH = "$(SYMROOT)/$(CONFIGURATION)/include";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_GC = required;
-				GCC_FAST_MATH = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/PlanetTool_prefix.h;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
 					"FORCE_SINGLE_THREAD=1",
 					"FPM_EXTRA_VALIDATION=1",
 					"OOMATHS_STANDALONE=1",
 					"OO_DEBUG=1",
 				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = 4.2;
-				HEADER_SEARCH_PATHS = "\"$(DEPS_INCLUDE_PATH)/png\"";
+				HEADER_SEARCH_PATHS = "\"$(DEP_HEADER_PATH)/png\"";
 				INFOPLIST_FILE = Resources/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "Planet Tool";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
 			};
 			name = Debug;
 		};
-		1AEEF03811846ADB0041CC67 /* Release */ = {
+		1AEEF03811846ADB0041CC67 /* Developer */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPS_INCLUDE_PATH = "$(SYMROOT)/$(CONFIGURATION)/include";
-				GCC_AUTO_VECTORIZATION = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_GC = required;
-				GCC_FAST_MATH = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/PlanetTool_prefix.h;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NS_BLOCK_ASSERTIONS=1",
 					"NDEBUG=1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "OOMATHS_STANDALONE=1";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "\"$(DEPS_INCLUDE_PATH)/png\"";
+				HEADER_SEARCH_PATHS = "\"$(DEP_HEADER_PATH)/png\"";
 				INFOPLIST_FILE = Resources/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				LLVM_LTO = NO;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
 				PRODUCT_NAME = "Planet Tool";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
-				ZERO_LINK = NO;
 			};
-			name = Release;
-		};
-		1AEEF03911846ADB0041CC67 /* Debug-optimized */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEPS_INCLUDE_PATH = "$(SYMROOT)/$(CONFIGURATION)/include";
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = required;
-				GCC_FAST_MATH = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/PlanetTool_prefix.h;
-				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
-					"FPM_EXTRA_VALIDATION=1",
-					"OOMATHS_STANDALONE=1",
-					"OO_DEBUG=1",
-				);
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "\"$(DEPS_INCLUDE_PATH)/png\"";
-				INFOPLIST_FILE = Resources/Info.plist;
-				INSTALL_PATH = "$(HOME)/Applications";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "Planet Tool";
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wextra",
-					"-Wno-unused-parameter",
-				);
-			};
-			name = "Debug-optimized";
+			name = Developer;
 		};
 		1DEB928608733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -848,7 +685,7 @@
 			};
 			name = Debug;
 		};
-		1DEB928708733DD80010E9CD /* Release */ = {
+		1DEB928708733DD80010E9CD /* Developer */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -881,34 +718,25 @@
 					"-Wno-unused-parameter",
 				);
 			};
-			name = Release;
+			name = Developer;
 		};
 		1DEB928A08733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */;
+			baseConfigurationReference = 1A058D56137E9562002015C2 /* oolite-debug-configuration.xcconfig */;
 			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				OOLITE_ROOT = ../../../;
-				PREBINDING = NO;
+				PLANETTOOL_VERSION = 0.9.0;
 			};
 			name = Debug;
 		};
-		1DEB928B08733DD80010E9CD /* Release */ = {
+		1DEB928B08733DD80010E9CD /* Developer */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AA1A8C4118AFF4300D3B653 /* planettool-mac.xcconfig */;
+			baseConfigurationReference = 1A058D57137E9562002015C2 /* oolite-developer-configuration.xcconfig */;
 			buildSettings = {
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				OOLITE_ROOT = ../../../;
-				PREBINDING = NO;
+				PLANETTOOL_VERSION = 0.9.0;
 			};
-			name = Release;
+			name = Developer;
 		};
 /* End XCBuildConfiguration section */
 
@@ -917,31 +745,28 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AEEF03711846ADB0041CC67 /* Debug */,
-				1AEEF03811846ADB0041CC67 /* Release */,
-				1AEEF03911846ADB0041CC67 /* Debug-optimized */,
+				1AEEF03811846ADB0041CC67 /* Developer */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Developer;
 		};
 		1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "planettool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB928608733DD80010E9CD /* Debug */,
-				1DEB928708733DD80010E9CD /* Release */,
-				1A2BEAE01182F083009E1BEB /* Debug-optimized */,
+				1DEB928708733DD80010E9CD /* Developer */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Developer;
 		};
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "planettool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB928A08733DD80010E9CD /* Debug */,
-				1DEB928B08733DD80010E9CD /* Release */,
-				1A2BEADF1182F083009E1BEB /* Debug-optimized */,
+				1DEB928B08733DD80010E9CD /* Developer */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Developer;
 		};
 /* End XCConfigurationList section */
 	};
