@@ -11,10 +11,8 @@
 		1A058D90137E9740002015C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A058D8F137E9740002015C2 /* Foundation.framework */; };
 		1A05911B137FBF02002015C2 /* FPMOpenEXR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A05911A137FBF02002015C2 /* FPMOpenEXR.cpp */; };
 		1A05911C137FBF02002015C2 /* FPMOpenEXR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A05911A137FBF02002015C2 /* FPMOpenEXR.cpp */; };
-		1A0591DD137FBF86002015C2 /* libOpenEXR_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A059112137FBEEA002015C2 /* libOpenEXR_for_oolite.a */; };
-		1A0591DE137FBF86002015C2 /* libilmbase_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A059110137FBEEA002015C2 /* libilmbase_for_oolite.a */; };
-		1A0591DF137FBF8A002015C2 /* libOpenEXR_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A059112137FBEEA002015C2 /* libOpenEXR_for_oolite.a */; };
-		1A0591E0137FBF8A002015C2 /* libilmbase_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A059110137FBEEA002015C2 /* libilmbase_for_oolite.a */; };
+		1A0593E3137FDF15002015C2 /* libOpenEXR_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0593BB137FDD27002015C2 /* libOpenEXR_for_oolite.a */; };
+		1A0593E4137FDF15002015C2 /* libilmbase_for_oolite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0593B9137FDD27002015C2 /* libilmbase_for_oolite.a */; };
 		1A11598A1073AADD00A75165 /* FloatPixMap.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1159891073AADD00A75165 /* FloatPixMap.c */; settings = {COMPILER_FLAGS = "-falign-loops=32 -falign-loops-max-skip=31 -fstrict-aliasing"; }; };
 		1A1159D91073FAB200A75165 /* FPMPNG.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1159D81073FAB200A75165 /* FPMPNG.c */; };
 		1A115A5910740C6200A75165 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A115A5810740C6200A75165 /* libz.dylib */; };
@@ -66,63 +64,49 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A05910F137FBEEA002015C2 /* PBXContainerItemProxy */ = {
+		1A0593B8137FDD27002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC046055464E500DB518D /* libilmbase_for_oolite.a */;
+			remoteGlobalIDString = D2AAC046055464E500DB518D;
 			remoteInfo = ilmbase;
 		};
-		1A059111137FBEEA002015C2 /* PBXContainerItemProxy */ = {
+		1A0593BA137FDD27002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A058E44137E9E83002015C2 /* libOpenEXR_for_oolite.a */;
+			remoteGlobalIDString = 1A058E44137E9E83002015C2;
 			remoteInfo = openexr;
 		};
-		1A059113137FBEEA002015C2 /* PBXContainerItemProxy */ = {
+		1A0593BC137FDD27002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A058E7E137EA0CA002015C2 /* toFloat */;
+			remoteGlobalIDString = 1A058E7E137EA0CA002015C2;
 			remoteInfo = toFloat;
 		};
-		1A059115137FBEEA002015C2 /* PBXContainerItemProxy */ = {
+		1A0593BE137FDD27002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A058E9A137EA108002015C2 /* eLut */;
+			remoteGlobalIDString = 1A058E9A137EA108002015C2;
 			remoteInfo = eLut;
 		};
-		1A059117137FBEEA002015C2 /* PBXContainerItemProxy */ = {
+		1A0593C0137FDD27002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A0590BB137EA76B002015C2 /* b44ExpLogTable */;
+			remoteGlobalIDString = 1A0590BB137EA76B002015C2;
 			remoteInfo = b44ExpLogTable;
 		};
-		1A0591E1137FBF96002015C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A058E36137E9E83002015C2 /* openexr */;
-			remoteInfo = openexr;
-		};
-		1A0591E3137FBF99002015C2 /* PBXContainerItemProxy */ = {
+		1A0593DF137FDF0C002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC045055464E500DB518D /* ilmbase */;
 			remoteInfo = ilmbase;
 		};
-		1A0591E5137FBF9F002015C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC045055464E500DB518D /* ilmbase */;
-			remoteInfo = ilmbase;
-		};
-		1A0591E7137FBF9F002015C2 /* PBXContainerItemProxy */ = {
+		1A0593E1137FDF0C002015C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 			proxyType = 1;
@@ -196,7 +180,7 @@
 		1A058D5B137E9562002015C2 /* oolite-version.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = "oolite-version.inc"; sourceTree = "<group>"; };
 		1A058D8B137E973C002015C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1A058D8F137E9740002015C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenEXR.xcodeproj; path = ../Dependencies/Mac/OpenEXR.xcodeproj; sourceTree = SOURCE_ROOT; };
+		1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenEXR.xcodeproj; path = ../Dependencies/OpenEXR/Mac/OpenEXR.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1A059119137FBF02002015C2 /* FPMOpenEXR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPMOpenEXR.h; sourceTree = "<group>"; };
 		1A05911A137FBF02002015C2 /* FPMOpenEXR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FPMOpenEXR.cpp; sourceTree = "<group>"; };
 		1A1159881073AADD00A75165 /* FloatPixMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatPixMap.h; sourceTree = "<group>"; };
@@ -272,8 +256,8 @@
 				1AB905B21322412A005B4A67 /* libpng-for-oolite-graphics.a in Frameworks */,
 				1A058D8C137E973C002015C2 /* AppKit.framework in Frameworks */,
 				1A058D90137E9740002015C2 /* Foundation.framework in Frameworks */,
-				1A0591DF137FBF8A002015C2 /* libOpenEXR_for_oolite.a in Frameworks */,
-				1A0591E0137FBF8A002015C2 /* libilmbase_for_oolite.a in Frameworks */,
+				1A0593E3137FDF15002015C2 /* libOpenEXR_for_oolite.a in Frameworks */,
+				1A0593E4137FDF15002015C2 /* libilmbase_for_oolite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +268,6 @@
 				1A115A5910740C6200A75165 /* libz.dylib in Frameworks */,
 				1AB905A713224106005B4A67 /* OoliteBase.framework in Frameworks */,
 				1AB905B313224139005B4A67 /* libpng-for-oolite-graphics.a in Frameworks */,
-				1A0591DD137FBF86002015C2 /* libOpenEXR_for_oolite.a in Frameworks */,
-				1A0591DE137FBF86002015C2 /* libilmbase_for_oolite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +321,14 @@
 			path = ../../../Config;
 			sourceTree = SOURCE_ROOT;
 		};
-		1A059108137FBEEA002015C2 /* Products */ = {
+		1A0593B1137FDD27002015C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A059110137FBEEA002015C2 /* libilmbase_for_oolite.a */,
-				1A059112137FBEEA002015C2 /* libOpenEXR_for_oolite.a */,
-				1A059114137FBEEA002015C2 /* toFloat */,
-				1A059116137FBEEA002015C2 /* eLut */,
-				1A059118137FBEEA002015C2 /* b44ExpLogTable */,
+				1A0593B9137FDD27002015C2 /* libilmbase_for_oolite.a */,
+				1A0593BB137FDD27002015C2 /* libOpenEXR_for_oolite.a */,
+				1A0593BD137FDD27002015C2 /* toFloat */,
+				1A0593BF137FDD27002015C2 /* eLut */,
+				1A0593C1137FDD27002015C2 /* b44ExpLogTable */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -501,8 +483,8 @@
 			dependencies = (
 				1AB905B913224153005B4A67 /* PBXTargetDependency */,
 				1AB905BB13224153005B4A67 /* PBXTargetDependency */,
-				1A0591E2137FBF96002015C2 /* PBXTargetDependency */,
-				1A0591E4137FBF99002015C2 /* PBXTargetDependency */,
+				1A0593E0137FDF0C002015C2 /* PBXTargetDependency */,
+				1A0593E2137FDF0C002015C2 /* PBXTargetDependency */,
 			);
 			name = "Planet Tool";
 			productName = "Planet Tool";
@@ -522,8 +504,6 @@
 			dependencies = (
 				1AB905B513224146005B4A67 /* PBXTargetDependency */,
 				1AB905B71322414A005B4A67 /* PBXTargetDependency */,
-				1A0591E6137FBF9F002015C2 /* PBXTargetDependency */,
-				1A0591E8137FBF9F002015C2 /* PBXTargetDependency */,
 			);
 			name = planettool;
 			productInstallPath = "$(HOME)/bin";
@@ -562,7 +542,7 @@
 					ProjectRef = 1AB9059A132240EE005B4A67 /* OoliteBase.xcodeproj */;
 				},
 				{
-					ProductGroup = 1A059108137FBEEA002015C2 /* Products */;
+					ProductGroup = 1A0593B1137FDD27002015C2 /* Products */;
 					ProjectRef = 1A059107137FBEEA002015C2 /* OpenEXR.xcodeproj */;
 				},
 			);
@@ -575,39 +555,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1A059110137FBEEA002015C2 /* libilmbase_for_oolite.a */ = {
+		1A0593B9137FDD27002015C2 /* libilmbase_for_oolite.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libilmbase_for_oolite.a;
-			remoteRef = 1A05910F137FBEEA002015C2 /* PBXContainerItemProxy */;
+			remoteRef = 1A0593B8137FDD27002015C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1A059112137FBEEA002015C2 /* libOpenEXR_for_oolite.a */ = {
+		1A0593BB137FDD27002015C2 /* libOpenEXR_for_oolite.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libOpenEXR_for_oolite.a;
-			remoteRef = 1A059111137FBEEA002015C2 /* PBXContainerItemProxy */;
+			remoteRef = 1A0593BA137FDD27002015C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1A059114137FBEEA002015C2 /* toFloat */ = {
+		1A0593BD137FDD27002015C2 /* toFloat */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = toFloat;
-			remoteRef = 1A059113137FBEEA002015C2 /* PBXContainerItemProxy */;
+			remoteRef = 1A0593BC137FDD27002015C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1A059116137FBEEA002015C2 /* eLut */ = {
+		1A0593BF137FDD27002015C2 /* eLut */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = eLut;
-			remoteRef = 1A059115137FBEEA002015C2 /* PBXContainerItemProxy */;
+			remoteRef = 1A0593BE137FDD27002015C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1A059118137FBEEA002015C2 /* b44ExpLogTable */ = {
+		1A0593C1137FDD27002015C2 /* b44ExpLogTable */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = b44ExpLogTable;
-			remoteRef = 1A059117137FBEEA002015C2 /* PBXContainerItemProxy */;
+			remoteRef = 1A0593C0137FDD27002015C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1AB905A2132240EE005B4A67 /* OoliteBase.framework */ = {
@@ -698,25 +678,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1A0591E2137FBF96002015C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = openexr;
-			targetProxy = 1A0591E1137FBF96002015C2 /* PBXContainerItemProxy */;
-		};
-		1A0591E4137FBF99002015C2 /* PBXTargetDependency */ = {
+		1A0593E0137FDF0C002015C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ilmbase;
-			targetProxy = 1A0591E3137FBF99002015C2 /* PBXContainerItemProxy */;
+			targetProxy = 1A0593DF137FDF0C002015C2 /* PBXContainerItemProxy */;
 		};
-		1A0591E6137FBF9F002015C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ilmbase;
-			targetProxy = 1A0591E5137FBF9F002015C2 /* PBXContainerItemProxy */;
-		};
-		1A0591E8137FBF9F002015C2 /* PBXTargetDependency */ = {
+		1A0593E2137FDF0C002015C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = openexr;
-			targetProxy = 1A0591E7137FBF9F002015C2 /* PBXContainerItemProxy */;
+			targetProxy = 1A0593E1137FDF0C002015C2 /* PBXContainerItemProxy */;
 		};
 		1AB905B513224146005B4A67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
