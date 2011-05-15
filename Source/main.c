@@ -30,6 +30,7 @@
 #include <errno.h>
 
 #include "FPMPNG.h"
+#include "FPMOpenEXR.h"
 #include "SphericalPixelSource.h"
 
 // Sources
@@ -46,8 +47,9 @@
 #include "RenderToGallPeters.h"
 
 
-static void LoadErrorHandler(const char *message, bool isError, void *context);
+static void IOErrorHandler(const char *message, bool isError, void *context);
 static void RenderErrorHandler(const char *message, void *context);
+static const char *FileNameExtension(const char *filename);
 
 
 typedef struct
@@ -120,7 +122,22 @@ int main (int argc, const char * argv[])
 	if (settings.sourcePath != NULL)
 	{
 		if (!settings.quiet)  printf("Reading...\n");
-		sourcePM = FPMCreateWithPNG(settings.sourcePath, kFPMGammaLinear, NULL, NULL, NULL);
+		
+		const char *ext = FileNameExtension(settings.sourcePath);
+		if (strcasecmp(ext, "png") == 0)
+		{
+			sourcePM = FPMCreateWithPNG(settings.sourcePath, kFPMGammaLinear, IOErrorHandler, NULL, NULL);
+		}
+		else if (strcasecmp(ext, "exr") == 0)
+		{
+			sourcePM = FPMCreateWithOpenEXR(settings.sourcePath, IOErrorHandler, NULL);
+		}
+		else
+		{
+			fprintf(stderr, "Cannot identify type of file %s\n", settings.sourcePath);
+			return EXIT_FAILURE;
+		}
+
 		
 		if (sourcePM == NULL)
 		{
@@ -193,11 +210,27 @@ int main (int argc, const char * argv[])
 	
 	// Write output.
 	if (!settings.quiet)  printf("Writing...\n");
-	FPMWritePNGFlags flags = kFPMWritePNGDither;
-	if (settings.sixteenBit)  flags = kFPMWritePNG16BPC;
-	if (!FPMWritePNG(resultPM, settings.sinkPath, flags, kFPMGammaLinear, kFPMGammaSRGB, LoadErrorHandler, NULL, NULL))
+	const char *ext = FileNameExtension(settings.sinkPath);
+	if (strcasecmp(ext, "png") == 0)
 	{
-		return EXIT_FAILURE;
+		FPMWritePNGFlags flags = kFPMWritePNGDither;
+		if (settings.sixteenBit)  flags = kFPMWritePNG16BPC;
+		if (!FPMWritePNG(resultPM, settings.sinkPath, flags, kFPMGammaLinear, kFPMGammaSRGB, IOErrorHandler, NULL, NULL))
+		{
+			return EXIT_FAILURE;
+		}
+	}
+	else if (strcasecmp(ext, "exr") == 0)
+	{
+		if (!FPMWriteOpenEXR(resultPM, settings.sinkPath, 0, IOErrorHandler, NULL))
+		{
+			return EXIT_FAILURE;
+		}
+	}
+	else
+	{
+		fprintf(stderr, "Cannot identify type of file %s\n", settings.sinkPath);
+		return EXIT_FAILURE;		
 	}
 	
 	if (!settings.quiet)  printf("Done.\n");
@@ -205,7 +238,7 @@ int main (int argc, const char * argv[])
 }
 
 
-static void LoadErrorHandler(const char *message, bool isError, void *context)
+static void IOErrorHandler(const char *message, bool isError, void *context)
 {
 	fprintf(stderr, "%s: %s\n", isError ? "ERROR" : "WARNING", message);
 }
@@ -214,6 +247,14 @@ static void LoadErrorHandler(const char *message, bool isError, void *context)
 static void RenderErrorHandler(const char *message, void *context)
 {
 	fprintf(stderr, "%s\n", message);
+}
+
+
+static const char *FileNameExtension(const char *filename)
+{
+    const char *dot = strrchr(filename, '.');
+    if(!dot || dot == filename) return "";
+    return dot + 1;
 }
 
 
@@ -326,7 +367,7 @@ static const ArgumentHandler sHandlers[] =
 	},
 	{
 		"cosblur",		0, 2, ParseCosBlur,
-		"<unmaskedscale> <maskedscale>", false, false, "Apply cosine blur (converts environment map into diffuse light map).", NULL, 0, 0
+		"<unmaskedscale> <maskedscale>", false, true, "Apply diffuse convolution (converts environment map into diffuse light map).", NULL, 0, 0
 	},
 	{
 		"help",			'H', 0, ParseHelp,
@@ -735,9 +776,10 @@ static void ShowHelp(bool showHidden)
 	// ACT III: the Expository Text.
 	printf("\n"
 		// "=========|=========|=========|=========|=========|=========|=========|=========|\n"
-		   "Planettool reads a texture map from an input file (in PNG format) or a generator\n"
-		   "function, and writes it to an output file (in PNG format). In so doing, it may\n"
-		   "change the projection and scale of the map, and may rotate it around the planet.\n"
+		   "Planettool reads a texture map from an input file (in PNG or OpenEXR format) or\n"
+		   "a generator function, and writes it to an output file (also in PNG or OpenEXR\n"
+		   "format). In so doing, it may change the projection and scale of the map, and may\n"
+		   "rotate it around the planet.\n"
 		   "\n"
 		   "Planettool's design is geared for flexibility and quality. As a side effect, it\n"
 		   "is extremely slow. Don't be alarmed if it takes several minutes to do anything.\n"
