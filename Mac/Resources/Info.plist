@@ -28,12 +28,24 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Portable Network Graphics image</string>
+			<string>Portable Network Graphics Image</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>public.png</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>PlanetToolDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>OpenEXR Image</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.ilm.openexr-image</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>PlanetToolDocument</string>

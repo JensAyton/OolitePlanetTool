@@ -27,6 +27,7 @@
 
 #import "PlanetToolDocument.h"
 #import "FPMPNG.h"
+#import "FPMOpenEXR.h"
 #import <OoliteBase/OoliteBase.h>
 #import "NSImage+FloatPixMap.h"
 
@@ -72,6 +73,7 @@ static void LoadProgressHandler(float proportion, void *context);
 @synthesize flip = _flip;
 @synthesize fast = _fast;
 @synthesize jitter = _jitter;
+@synthesize diffuseConvolution = _diffuseConvolution;
 @synthesize sixteenBitPerChannel = _sixteenBitPerChannel;
 @synthesize rotateX = _rotateX;
 @synthesize rotateY = _rotateY;
@@ -118,7 +120,7 @@ static void LoadProgressHandler(float proportion, void *context);
 {
 	if (![absoluteURL isFileURL])  return NO;
 	
-	[NSThread detachNewThreadSelector:@selector(asyncLoadImage:) toTarget:self withObject:absoluteURL.path];
+	[NSThread detachNewThreadSelector:@selector(asyncLoadImage:) toTarget:self withObject:$dict(@"path", absoluteURL.path, @"type", typeName)];
 	
 	return YES;
 }
@@ -388,7 +390,7 @@ static inline float ClampDegrees(float value)
 - (NSString *) suggestedRenderName
 {
 	NSString *name = [self displayName];
-	if ([[name.pathExtension lowercaseString] isEqualToString:@"png"])
+	if ([$set(@"png", @"exr") containsObject:[name.pathExtension lowercaseString]])
 	{
 		name = [name stringByDeletingPathExtension];
 	}
@@ -416,7 +418,7 @@ static inline float ClampDegrees(float value)
 			break;
 	}
 	
-	return [name stringByAppendingPathExtension:@"png"];
+	return [name stringByAppendingPathExtension:_highDynamicRange ? @"exr" : @"png"];
 }
 
 
@@ -431,6 +433,7 @@ static inline float ClampDegrees(float value)
 	_finalRenderer.flip = self.flip;
 	_finalRenderer.fast = self.fast;
 	_finalRenderer.jitter = self.jitter;
+	_finalRenderer.diffuseConvolution = self.diffuseConvolution;
 	_finalRenderer.rotateX = self.rotateX;
 	_finalRenderer.rotateY = self.rotateY;
 	_finalRenderer.rotateZ = self.rotateZ;
@@ -451,7 +454,7 @@ static inline float ClampDegrees(float value)
 	if (![self startFinalRenderer])  return;
 	
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
-	savePanel.requiredFileType = @"png";
+	savePanel.allowedFileTypes = $array(@"public.png", @"com.ilm.openexr-image");
 	savePanel.canSelectHiddenExtension = YES;
 	[savePanel setExtensionHidden:NO];
 	_outputPath = nil;
@@ -570,17 +573,21 @@ static void WriteErrorHandler(const char *message, bool isError, void *context)
 
 - (void) writeOutputFile
 {
-	FPMWritePNGFlags flags = kFPMWritePNGDither;
-	if (self.sixteenBitPerChannel)  flags |= kFPMWritePNG16BPC;
-	if (FPMWritePNG(_outputImage, [_outputPath fileSystemRepresentation], flags, kFPMGammaLinear, kFPMGammaSRGB, WriteErrorHandler, NULL, self))
+	BOOL success = NO;
+	const char *path = [_outputPath fileSystemRepresentation];
+	
+	if ([[_outputPath pathExtension] caseInsensitiveCompare:@"exr"] == NSOrderedSame)
 	{
-		[self removeProgressSheetWithSuccess:YES];
+		success = FPMWriteOpenEXR(_outputImage, path, 0, WriteErrorHandler, self);
 	}
 	else
 	{
-		[self removeProgressSheetWithSuccess:NO];
+		FPMWritePNGFlags flags = kFPMWritePNGDither;
+		if (self.sixteenBitPerChannel)  flags |= kFPMWritePNG16BPC;
+		success = FPMWritePNG(_outputImage, path, flags, kFPMGammaLinear, kFPMGammaSRGB, WriteErrorHandler, NULL, self);
 	}
 	
+	[self removeProgressSheetWithSuccess:success];
 	FPMRelease(&_outputImage);
 	_outputPath = nil;
 }
@@ -737,9 +744,23 @@ static void WriteErrorHandler(const char *message, bool isError, void *context)
 #pragma mark -
 #pragma mark Loading
 
-- (void) asyncLoadImage:(NSString *)path
+- (void) asyncLoadImage:(NSDictionary *)parameters
 {
-	_sourcePixMap = FPMCreateWithPNG([path fileSystemRepresentation], kFPMGammaLinear, LoadErrorHandler, LoadProgressHandler, self);
+	const char *path = [[parameters oo_stringForKey:@"path"] fileSystemRepresentation];
+	NSString *type = [parameters oo_stringForKey:@"type"];
+	
+	if ([type isEqualToString:@"public.png"])
+	{
+		_sourcePixMap = FPMCreateWithPNG(path, kFPMGammaLinear, LoadErrorHandler, LoadProgressHandler, self);
+	}
+	else if ([type isEqualToString:@"com.ilm.openexr-image"])
+	{
+		[self updateProgress:2];	// > 1 = indeterminate.
+		_highDynamicRange = YES;
+	//	self.diffuseConvolution = YES;	// HACK. No checkbox because it can only be used in highly-specific contexts.
+		_sourcePixMap = FPMCreateWithOpenEXR(path, LoadErrorHandler, self);
+	}
+	
 	if (_sourcePixMap != NULL)
 	{
 		[self performSelectorOnMainThread:@selector(loadingComplete) withObject:nil waitUntilDone:NO];

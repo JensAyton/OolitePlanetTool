@@ -34,6 +34,7 @@
 #include "ReadLatLong.h"
 #include "ReadCube.h"
 #include "MatrixTransformer.h"
+#include "CosineBlurFilter.h"
 
 // Sinks
 #include "RenderToLatLong.h"
@@ -66,6 +67,7 @@ static void ErrorCB(const char *message, void *context);
 @synthesize flip = _flip;
 @synthesize fast = _fast;
 @synthesize jitter = _jitter;
+@synthesize diffuseConvolution = _diffuseConvolution;
 @synthesize rotateX = _rotateX;
 @synthesize rotateY = _rotateY;
 @synthesize rotateZ = _rotateZ;
@@ -255,6 +257,21 @@ static void ErrorCB(const char *message, void *context);
 		source = MatrixTransformer;
 		sourceDestructor = MatrixTransformerDestructor;
 		sourceContext = transformContext;
+	}
+	
+	if (self.diffuseConvolution)
+	{
+		void *convolveContext = NULL;
+		if (!CosineBlurFilterSetUp(source, sourceDestructor, sourceContext, self.outputSize, 1.0, 1.0, &convolveContext))
+		{
+			[self failRenderWithMessage:NSLocalizedString(@"Internal error: failed to set up diffuse convolution filter.", NULL)];
+			FPMRelease(&_sourcePixMap);
+			return;
+		}
+		
+		source = CosineBlurFilter;
+		sourceDestructor = CosineBlurFilterDestructor;
+		sourceContext = convolveContext;
 	}
 	
 	_hadProgress = NO;

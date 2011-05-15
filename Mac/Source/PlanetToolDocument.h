@@ -42,8 +42,11 @@
 	NSInteger						_outputSize;
 	NSString						*_outputPath;
 	NSString						*_outputDisplayName;
+	NSString						*_outputType;
 	FloatPixMapRef					_outputImage;
 	BOOL							_readyImage;	// Set if rendering completes while save panel open.
+	
+	BOOL							_highDynamicRange;
 	
 #if !__OBJC2__	
 	NSWindow						*_progressSheet;
@@ -56,6 +59,7 @@
 	BOOL							_flip;
 	BOOL							_fast;
 	BOOL							_jitter;
+	BOOL							_diffuseConvolution;
 	BOOL							_isRenderingPreview;
 	BOOL							_sixteenBitPerChannel;
 	BOOL							_gridGenerator;
@@ -81,6 +85,7 @@
 @property BOOL flip;
 @property BOOL fast;
 @property BOOL jitter;
+@property BOOL diffuseConvolution;
 @property BOOL sixteenBitPerChannel;
 @property float rotateX;
 @property float rotateY;

@@ -70,6 +70,7 @@ static inline BOOL IsValidPlanetToolOutputFormat(PlanetToolFormat value)
 	BOOL							_flip;
 	BOOL							_fast;
 	BOOL							_jitter;
+	BOOL							_diffuseConvolution;
 	float							_rotateX;
 	float							_rotateY;
 	float							_rotateZ;
@@ -83,6 +84,7 @@ static inline BOOL IsValidPlanetToolOutputFormat(PlanetToolFormat value)
 @property BOOL flip;
 @property BOOL fast;
 @property BOOL jitter;
+@property BOOL diffuseConvolution;
 @property float rotateX;
 @property float rotateY;
 @property float rotateZ;
